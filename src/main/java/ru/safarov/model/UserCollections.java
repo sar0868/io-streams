@@ -2,18 +2,24 @@ package ru.safarov.model;
 
 import java.io.Serializable;
 import java.util.Collection;
-import java.util.List;
 
 public class UserCollections implements Serializable {
 
-    private Collection<User> usersCollection;
+    private Collection<User> users;
 
-    public Collection<User> getUsersCollection() {
-        return usersCollection;
+    public Collection<User> getUsers() {
+        return users;
     }
 
-    public void setUsersCollection(User user) {
-        this.usersCollection.add(user);
+    public void setUsers(Collection<User> users) {
+        this.users = users;
+    }
+
+    @Override
+    public String toString() {
+        return "UserCollections{" +
+                "users=" + users +
+                '}';
     }
 }
 

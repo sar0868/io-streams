@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public interface UserDeserializer {
 
-    public UserCollections deserialize(String filename) throws IOException;
+    public UserCollections deserialize(String filename);
 
 
 }
