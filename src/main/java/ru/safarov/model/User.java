@@ -1,7 +1,10 @@
 package ru.safarov.model;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
 import java.io.Serializable;
 
+@JsonPropertyOrder(value = {"id", "name", "email"})
 public class User implements Serializable {
     private Long id;
     private String name;

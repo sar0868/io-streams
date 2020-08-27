@@ -20,7 +20,8 @@ class UserSerializerTest {
         UserCollections userCollections = prepareTestData();
         JsonUserSerializer jsonUserSerializer = new JsonUserSerializer();
         jsonUserSerializer.serializer(userCollections,"data.json");
-        Assertions.assertTrue(new File("data.json").exists());
+        File file = new File("data.json");
+        Assertions.assertTrue(file.exists() && file.length() > 0);
     }
 
     @Test
@@ -28,7 +29,8 @@ class UserSerializerTest {
         UserCollections userCollections = prepareTestData();
         XmlUserSerializer xmlUserSerializer = new XmlUserSerializer();
         xmlUserSerializer.serializer(userCollections,"data.xml");
-        Assertions.assertTrue(new File("data.xml").exists());
+        File file  = new File("data.xml");
+        Assertions.assertTrue(file.exists() && file.length() > 0);
     }
 
     @Test
@@ -36,8 +38,10 @@ class UserSerializerTest {
         UserCollections userCollections = prepareTestData();
         CsvUserSerializer csvUserSerializer = new CsvUserSerializer();
         csvUserSerializer.serializer(userCollections,"data.csv");
-        Assertions.assertTrue(new File("data.csv").exists());
+        File file = new File("data.csv");
+        Assertions.assertTrue(file.exists() && file.length() > 0);
     }
+
 
     private UserCollections prepareTestData() {
         UserCollections userCollection = new UserCollections();

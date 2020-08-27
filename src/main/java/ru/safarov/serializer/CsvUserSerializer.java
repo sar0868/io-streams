@@ -17,13 +17,10 @@ public class CsvUserSerializer implements UserSerializer{
 
     public void serializer(UserCollections userCollections, String filename) {
 
-           CsvSchema schema = CsvSchema.builder()
-                .addColumn("id", CsvSchema.ColumnType.NUMBER)
-                .addColumn("name")
-                .addColumn("email")
-                .build();
-           ObjectMapper objectMapper = new CsvMapper();
-            File out = new File(filename);
+        ObjectMapper objectMapper = new CsvMapper();
+        File out = new File(filename);
+        CsvSchema schema =  ((CsvMapper) objectMapper).schemaFor(User.class).withHeader();
+        schema = schema.withColumnSeparator(';');
         try {
             objectMapper.writer(schema).writeValue(out, userCollections.getUsers());
         } catch (IOException e) {
