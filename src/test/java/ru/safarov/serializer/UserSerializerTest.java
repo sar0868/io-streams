@@ -48,10 +48,12 @@ class UserSerializerTest {
         User user1 = new User();
         user1.setId(1L);
         user1.setName("Ivan");
+        user1.setAge(30);
         user1.setEmail("ivan@mail.ru");
         User user2 = new User();
         user2.setId(2L);
         user2.setName("Irina");
+        user2.setAge(32);
         user2.setEmail("irina@mail.ru");
         userCollection.setUsers(new ArrayList<User>());
         userCollection.getUsers().add(user1);
