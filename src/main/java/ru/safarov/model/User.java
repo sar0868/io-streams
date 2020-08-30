@@ -9,6 +9,7 @@ public class User implements Serializable {
     private Long id;
     private String name;
     private String email;
+    private Integer age;
 
     public Long getId() {
         return id;
@@ -34,12 +35,21 @@ public class User implements Serializable {
         this.email = email;
     }
 
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
+                ", age=" + age + '\'' +
+                ", email='" + email +
                 '}';
     }
 }
